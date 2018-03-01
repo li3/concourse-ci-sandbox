@@ -6,8 +6,8 @@ resources:
     branch: master
 jobs:
 - name: hello-world
-  public: true
   plan:
   - get: source-code
+    trigger: true
   - task: run-say-hello
     file: source-code/ci/tasks/say-hello-world.yml
