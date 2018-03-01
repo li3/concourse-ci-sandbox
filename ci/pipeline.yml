@@ -1,0 +1,13 @@
+resources:
+- name: source-code
+  type: git
+  source: 
+    uri: https://github.com/li3/concourse-ci-sandbox.git
+    branch: master
+jobs:
+- name: hello-world
+  public: true
+  plan:
+  - get: source-code
+  - task: run-say-hello
+    file: source-code/ci/tasks/say-hello-world.yml

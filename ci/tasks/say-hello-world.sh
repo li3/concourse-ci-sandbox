@@ -2,4 +2,4 @@
 
 set -e -x
 
-echo "Hello there?"
+echo "Hello world?"
