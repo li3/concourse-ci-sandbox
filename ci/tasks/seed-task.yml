@@ -12,9 +12,9 @@ inputs:
 run:
   path: bash
   args:
-    - ./source-code/ci/tasks/seed-task.sh
-    - {{concourse-username}}
-    - {{concourse-password}}
-    - {{concourse-url}}
-    - {{concourse-team}}
-    - {{concourse-pipeline-name}}
+  - ./source-code/ci/tasks/seed-task.sh
+  - {{concourse-username}}
+  - {{concourse-password}}
+  - {{concourse-url}}
+  - {{concourse-team}}
+  - {{concourse-pipeline-name}}
