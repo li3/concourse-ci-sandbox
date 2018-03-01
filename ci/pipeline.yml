@@ -20,6 +20,11 @@ jobs:
       - fly_linux_amd64
   - task: seed-task
     file: source-code/ci/tasks/seed-task.yml
+    params:
+      concourse-url: {{concourse-url}}
+      concourse-team: {{concourse-team}}
+      concourse-username: {{concourse-username}}
+      concourse-password: {{concourse-password}}
 
 - name: hello-world
   plan:

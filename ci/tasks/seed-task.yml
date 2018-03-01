@@ -9,12 +9,12 @@ inputs:
 - name: source-code
 - name: fly-release
 
+params:
+  concourse-url:
+  concourse-team:
+  concourse-username:
+  concourse-password:
+
 run:
   path: bash
-  args:
-  - ./source-code/ci/tasks/seed-task.sh
-  - {{concourse-username}}
-  - {{concourse-password}}
-  - {{concourse-url}}
-  - {{concourse-team}}
-  - {{concourse-pipeline-name}}
+  args: [./source-code/ci/tasks/seed-task.sh]
