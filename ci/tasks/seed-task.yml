@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: { repository: ubuntu }
+
+inputs:
+- name: source-code
+- name: fly-release
+
+run:
+  path: bash
+  args: [./source-code/ci/tasks/seed-task.sh]

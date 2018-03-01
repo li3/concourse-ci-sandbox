@@ -4,10 +4,26 @@ resources:
   source: 
     uri: https://github.com/li3/concourse-ci-sandbox.git
     branch: master
+- name: fly-release
+  type: github-release
+  source:
+    owner: concourse
+    repository: concourse
 jobs:
-- name: hello-world
+- name: seed
   plan:
   - get: source-code
     trigger: true
-  - task: run-say-hello
+  - get: fly-release
+    globs:
+    - fly_linux_amd64
+  - task: seed-task
+    file: source-code/ci/tasks/seed-task.yml
+
+-name: hello-world
+  plan:
+  - get: source-code
+    trigger: true
+    passed: seed
+  - task:
     file: source-code/ci/tasks/say-hello-world.yml
