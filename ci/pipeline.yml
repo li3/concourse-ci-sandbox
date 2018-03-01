@@ -15,15 +15,16 @@ jobs:
   - get: source-code
     trigger: true
   - get: fly-release
-    globs:
-    - fly_linux_amd64
+    params:
+      globs:
+      - fly_linux_amd64
   - task: seed-task
     file: source-code/ci/tasks/seed-task.yml
 
--name: hello-world
+- name: hello-world
   plan:
   - get: source-code
     trigger: true
-    passed: seed
-  - task:
+    passed: [seed]
+  - task: hello-task
     file: source-code/ci/tasks/say-hello-world.yml
