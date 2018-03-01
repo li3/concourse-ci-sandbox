@@ -9,4 +9,5 @@ inputs:
 - name: source-code
 
 run:
-  path: source-code/ci/tasks/say-hello-world.sh
+  path: bash
+  args: [./source-code/ci/tasks/say-hello-world.sh]
