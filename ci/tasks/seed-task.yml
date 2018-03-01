@@ -16,5 +16,4 @@ params:
   concourse-password:
 
 run:
-  path: bash
-  args: [./source-code/ci/tasks/seed-task.sh]
+  path: ./source-code/ci/tasks/seed-task.sh
