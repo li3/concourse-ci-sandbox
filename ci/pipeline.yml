@@ -21,10 +21,10 @@ jobs:
   - task: seed-task
     file: source-code/ci/tasks/seed-task.yml
     params:
-      concourse-url: {{concourse-url}}
-      concourse-team: {{concourse-team}}
-      concourse-username: {{concourse-username}}
-      concourse-password: {{concourse-password}}
+      concourse_url: {{concourse_url}}
+      concourse_team: {{concourse_team}}
+      concourse_username: {{concourse_username}}
+      concourse_password: {{concourse_password}}
 
 - name: hello-world
   plan:

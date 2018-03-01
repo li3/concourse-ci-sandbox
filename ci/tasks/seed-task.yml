@@ -10,10 +10,10 @@ inputs:
 - name: fly-release
 
 params:
-  concourse-url:
-  concourse-team:
-  concourse-username:
-  concourse-password:
+  concourse_url:
+  concourse_team:
+  concourse_username:
+  concourse_password:
 
 run:
   path: ./source-code/ci/tasks/seed-task.sh
